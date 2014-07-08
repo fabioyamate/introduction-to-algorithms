@@ -1,0 +1,14 @@
+Instance of a problem
+  inputs required to compute a solution to the problem
+
+Correct Algorithm
+  for every input it halts with the corret output
+  it solves the computation problem
+
+Data Structure
+  store and organize data in order to facilitate access and modification
+
+NP-Complete
+  subset of problems that no efficient solution is known
+  proposition: if there is a efficient NP-complete problem, then there is
+               an efficient solution for every NP-complete problem.
