@@ -6,7 +6,6 @@ Follow up of reading [Introduction to Algorithms](http://www.amazon.com/Introduc
 This will be a part of book club with my fellow companions:
 
 * [andrielfn](https://github.com/andrielfn)
-* [bernardoamc](https://github.com/bernardoamc)
 * [laurocaetano](https://github.com/laurocaetano)
 * [rmascarenhas](https://github.com/rmascarenhas)
 
