@@ -1,0 +1,12 @@
+#!/bin/sh
+output_dir=`dirname $1`
+filename=${1%.*}
+
+pdflatex -interaction=nonstopmode -output-directory=$output_dir $filename.tex > /dev/null
+if [ -e $? ]; then
+  echo "Failed to compile"
+else
+  convert -density 300 $filename.pdf -resize 960 -flatten $filename.jpg
+  open $filename.jpg
+  echo "OK"
+fi
