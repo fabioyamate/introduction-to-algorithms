@@ -45,7 +45,7 @@ So, given that $T$ is the time take in microseconds we just need to solve the eq
   \item $f(n) = n^2     \implies n = \floor{\sqrt T}$
   \item $f(n) = n^3     \implies n = \floor{\sqrt[3] T}$
   \item $f(n) = 2^n     \implies n = \floor{\lg T}$
-  \item $f(n) = n!      \implies $ iterating $n$ until $n! \leq T$
+  \item $f(n) = n!      \implies $ iterating $n$ until $n! \leq T$, another solution is $\floor{\Gamma (n+1) = T}$ \footnote{gamma function}
 \end{itemize}
 
 So, two functions are hard to find the largest value of $n$ which are $e^{W(T)}$ and $n!$. The first one you can use
