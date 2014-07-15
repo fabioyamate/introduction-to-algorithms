@@ -11,7 +11,7 @@
 \usepackage{enumitem}
 \usepackage{mathtools}
 
-\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 
 \begin{document}
 %\section{}
@@ -41,10 +41,10 @@ So, given that $T$ is the time take in microseconds we just need to solve the eq
   \item $f(n) = \lg n   \implies n = 2^{T}$
   \item $f(n) = \sqrt n \implies n = T^2$
   \item $f(n) = n       \implies n = T$
-  \item $f(n) = n \lg n \implies n = \ceil{e^{W(T)}}$ (Lambert W function)
-  \item $f(n) = n^2     \implies n = \ceil{\sqrt T}$
-  \item $f(n) = n^3     \implies n = \ceil{\sqrt[3] T}$
-  \item $f(n) = 2^n     \implies n = \ceil{\lg T}$
+  \item $f(n) = n \lg n \implies n = \floor{e^{W(T)}}$ (Lambert W function)
+  \item $f(n) = n^2     \implies n = \floor{\sqrt T}$
+  \item $f(n) = n^3     \implies n = \floor{\sqrt[3] T}$
+  \item $f(n) = 2^n     \implies n = \floor{\lg T}$
   \item $f(n) = n!      \implies $ iterating $n$ until $n! \leq T$
 \end{itemize}
 
