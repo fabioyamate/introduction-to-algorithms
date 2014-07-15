@@ -1,8 +1,9 @@
 > 1 Give an example of an application that requires algorithmic content at
 > the application level, and discuss the function of the algorithms involved.
 
-Search system relies on a lot on algorithms. The algorithms used do sorting
-results, indexing content to improve the lookup of the content to search for.
+Search system relies on a lot of algorithms. A list of possible algorithms are:
+sorting, indexing content to improve the lookup of the content to search for,
+ranking result by given points.
 
 > 2 Suppose we are comparing implementations of insertion sort and merge
 > sort on the same machine. For inputs of size n, insertion sort runs in
