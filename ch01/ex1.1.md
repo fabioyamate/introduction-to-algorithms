@@ -27,7 +27,7 @@ it is slow at removing and finding elements, since it requires at worst case
 to traverse the entire list.
 
 Binary Tree is fast at searching elements which is proportional to its height.
-Insert is also easy. But, it may grow unbalanced, which my generate a tree that
+Insert is also easy. But, it may grow unbalanced, which may generate a tree that
 has height proportional to its size. (for example, adding reversed items to it,
 it will grow to its left)
 
@@ -36,7 +36,9 @@ it will grow to its left)
 
 Both solves a problem that minimize costs. The difference in both is that the
 shortest-path algorithm finds the path of small cost but does not require to
-pass thru all nodes which traveling-salesman does.
+pass thru all nodes which traveling-salesman does. Also, traveling-salesman
+has the contraint that all nodes should be visited exactly once and it you
+should return to the starting point.
 
 > 5 Come up with a real-world problem in which only the best solution will
 > do. Then come up with one in which a solution that is "approximately" the
