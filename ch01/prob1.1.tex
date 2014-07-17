@@ -1,0 +1,75 @@
+\documentclass[11pt, oneside]{article}          % use "amsart" instead of "article" for AMSLaTeX format
+\pagestyle{empty}
+\usepackage[margin=0.5in]{geometry}                           % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}
+%\geometry{landscape}                           % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}                   % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}                           % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+                                                                % TeX will automatically convert eps --> pdf in pdflatex                
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+\begin{document}
+%\section{}
+%\subsection{}
+
+\textbf{1-1 Comparison of running times}
+
+For each function $f(n)$ and time $t$ in the following table, determine the largest size $n$ of a problem that can be solved in time $t$, assuming that the algorithm to solve the problem takes $f(n)$ microseconds.
+
+\textbf{Answer}
+
+Considering the linear case where $f(n) = n$ and $1\mu = 10^{-6}$:
+
+\begin{itemize}[label=,noitemsep]
+  \item 1 second  = $1.00 \times 10^6\mu$ second
+  \item 1 minute  = $6.00 \times 10^7\mu$ second
+  \item 1 hour    = $3.60 \times 10^9\mu$ second
+  \item 1 day     = $8.64 \times 10^{10}\mu$ second
+  \item 1 month   = $2.59 \times 10^{12}\mu$ second
+  \item 1 year    = $3.15 \times 10^{13}\mu$ second
+  \item 1 century = $3.15 \times 10^{15}\mu$ second
+\end{itemize}
+
+So, given that $T$ is the time take in microseconds we just need to solve the equation for each given time $t$.
+
+\begin{itemize}[label=,noitemsep]
+  \item $f(n) = \lg n   \implies n = 2^{T}$
+  \item $f(n) = \sqrt n \implies n = T^2$
+  \item $f(n) = n       \implies n = T$
+  \item $f(n) = n \lg n \implies n = \floor{e^{W(T)}}$ (Lambert W function)
+  \item $f(n) = n^2     \implies n = \floor{\sqrt T}$
+  \item $f(n) = n^3     \implies n = \floor{\sqrt[3] T}$
+  \item $f(n) = 2^n     \implies n = \floor{\lg T}$
+  \item $f(n) = n!      \implies $ iterating $n$ until $n! \leq T$, another solution is $\floor{\Gamma (n+1) = T}$ \footnote{gamma function}
+\end{itemize}
+
+So, two functions are hard to find the largest value of $n$ which are $e^{W(T)}$ and $n!$. The first one you can use
+Wolfram Alpha\footnote{http://www.wolframalpha.com/} with the following expression:
+
+$solve\ n: n \lg n = T$ (replace $T$ with desired value).
+
+The $n!$ I just implemented and tested for some values of $n$.
+
+\begin{center}
+  \begin{tabular}{ *{8}{c|} }
+    & \shortstack{1 \\ second} & \shortstack{1 \\ minute} & \shortstack{1 \\ hour}%
+      & \shortstack{1 \\ day} & \shortstack{1 \\ month} & \shortstack{1 \\ year}%
+      & \shortstack{1 \\ century} \\ \hline
+
+      $\lg n$   & $2^{10^6}$             & $2^{6.00 \times 10^7}$ & $2^{3.60 \times 10^9}$ & $2^{8.64 \times 10^{10}}$ & $2^{2.59 \times 10^{12}}$ & $2^{3.15 \times 10^{13}}$ & $2^{3.15 \times 10^{15}}$ \\
+      $\sqrt n$ & $1.00 \times 10^{12}$  & $3.60 \times 10^{15}$  & $1.30 \times 10^{19}$  & $7.46 \times 10^{21}$  & $6.72 \times 10^{24}$     & $9.95 \times 10^{26}$     & $9.95 \times 10^{30}$ \\
+      $n$       & $1.00 \times 10^6$     & $6.00 \times 10^7$     & $3.60 \times 10^9$     & $8.64 \times 10^{10}$  & $2.59 \times 10^{12}$     & $3.15 \times 10^{13}$     & $3.15 \times 10^{15}$ \\
+      $n \lg n$ & $6.27 \times 10^4$     & $2.80 \times 10^6$     & $1.33 \times 10^8$     & $2.76 \times 10^9$     & $7.18 \times 10^{10}$     & $7.97 \times 10^{11}$     & $6.85 \times 10^{13}$ \\
+      $n^2$     & $1.00 \times 10^3$     & $7.75 \times 10^3$     & $6.00 \times 10^4$     & $2.94 \times 10^5$     & $1.61 \times 10^6$        & $5.62 \times 10^6$        & $5.62 \times 10^7$ \\
+      $n^3$     & $1.00 \times 10^2$     & $3.91 \times 10^2$     & $1.53 \times 10^3$     & $4.42 \times 10^3$     & $1.37 \times 10^4$        & $3.16 \times 10^4$        & $1.47 \times 10^5$ \\
+      $2^n$     & $19$                   & $25$                   & $31$                   & $36$                   & $41$                      & $44$                      & $51$ \\
+      $n!$      & $9$                    & $11$                   & $12$                   & $13$                   & $15$                      & $16$                      & $17$
+    \end{tabular}
+\end{center}
+
+\end{document}
