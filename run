@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# stupid simple way to compile and run c file
+
+file=${1##*/}
+filename=${file%.c}
+
+gcc $1 -o ./bin/$filename -Wall && ./bin/$filename
