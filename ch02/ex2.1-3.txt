@@ -1,0 +1,18 @@
+LINEAR-SEARCH(A, v)
+  for i = 1 to A.length
+    if A[i] == v
+      return i
+  return NIL
+
+Initialization:
+  before the loop, we always point to an untested value with position `i`
+
+Maintenance:
+  we check if the value `v` is equal to the current pointing value `A[i]`,
+  if so we return the index `i`, otherwise the index `i` is incremented
+  keeping the invariant of an untested value
+
+Termination:
+  if the loop ends it means that we didn't find the value in A, which
+  means that we return NIL value
+

@@ -1,0 +1,36 @@
+Boolean Table of Add Binary of 1-bit
+
+(we can find the expressions by applying the Karnaugh map)
+
+a b c | s c'
+0 0 0 | 0 0
+0 1 0 | 1 0
+1 0 0 | 1 0
+1 1 0 | 0 1
+0 0 1 | 1 0
+0 1 1 | 0 1
+1 0 1 | 0 1
+1 1 1 | 1 1
+
+ADD-BINARY-INTEGER(A, B, C)
+  carry = 0
+  // bits are read from right-to-left
+  for i = n downto 1
+    C[i+1] = A[i] xor B[i] xor carry
+    carry = (A[i] and B[i]) or ((A[i] xor B[i]) and carry)
+  C[i] = carry
+
+Initialization:
+  we start with a carry value with the overflow bit of the previous bit
+  addition. When i = n, the carry value is 0, since no addition was
+  previously done (no overflow bit).
+
+Maintenance:
+  The C array has n+1 bits, since it is possible to have an overflow bit.
+  We compute the C[i+1] value from A[i], B[i] and carry, and also update
+  the carry value if an overflow occurred. This holds the invariant of
+  having the carry from previous bit addition.
+
+Termination:
+  when the loop finishes we might a overflow bit set which is stored on
+  on C[i] position which is i = 1, the leftmost bit on binary integer.
