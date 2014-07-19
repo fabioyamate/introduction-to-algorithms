@@ -1,0 +1,4 @@
+Considering the LINEAR-SEARCH(A, v) function the worst-case is `v` being the
+last element in A which gives us Theta(n). The average-case the `v` element
+would be at the middle of A, so we have to iterate over n/2 elements, which
+still is linear, so Theta(n) for average-case.
