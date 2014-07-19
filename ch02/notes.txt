@@ -1,0 +1,10 @@
+Input size
+  - array size
+  - number of bits in a binary number
+
+Running time
+  operations done
+
+Average-case running time
+
+Worst-case running time
