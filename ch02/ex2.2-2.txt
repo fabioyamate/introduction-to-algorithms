@@ -1,0 +1,36 @@
+SELECTION-SORT(A)
+  for i=1 to A.length - 1
+    smallest = i
+    for j=i+1 to A.lenght
+      if A[j] < A[smallest]
+        smallest = j
+    // swap
+    temp = A[i]
+    A[i] = A[samllest]
+    A[smallest] = temp
+
+Loop invariant is that subarray prior to index i are smaller.
+
+Initialization:
+  It initializes with i = 1, and the subarray prior to it is empty, which means
+  that there is no value smaller than the current one, which shows that the loop
+  invariant holds prior to the first iteration.
+
+Maintenance:
+  Each iteration looks for an element smaller than A[i], and than swaps the value.
+  If no smaller is found A[i] is kept in place.
+
+Termination:
+  After running the n-1 elements, since prior elements to A[n] are smaller than
+  it, there is no need to run the last iteration, since there is nothing to
+  swap with.
+
+Both best and worst case are:
+
+T(m) = m + (m - 1) + (m - 2) + ... + 1
+     = (m * (m + 1)) / 2                  (Sum of Series)
+
+T(n-1) = (n - 1) * n / 2
+       = (n^2 - n) / 2
+
+Theta(n) = n^2
