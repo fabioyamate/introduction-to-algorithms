@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}          % use "amsart" instead of "article" for AMSLaTeX format
+\pagestyle{empty}
+\usepackage[margin=0.5in]{geometry}                           % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}
+%\geometry{landscape}                           % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}                   % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}                           % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+                                                                % TeX will automatically convert eps --> pdf in pdflatex                
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{clrscode3e}
+
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+\begin{document}
+%\section{}
+%\subsection{}
+
+\textbf{2-3 Correctness of Horner’s rule}
+
+\textbf{a.} In terms of‚ $\Theta$-notation, what is the running time of this code fragment for Horner’s rule?
+
+\textbf{Answer}
+
+$\Theta (n)$
+
+\textbf{b.} Write pseudocode to implement the naive polynomial-evaluation algorithm that computes
+each term of the polynomial from scratch. What is the running time of this algorithm? How does it
+compare to Horner’s rule?
+
+\textbf{Answer}
+
+\begin{codebox}
+\Procname{$\proc{NAIVE-POLINOMIAL-EVALUATION}(A, x)$}
+\li $\id{sum} \gets 0$
+\li \For $j \gets 1$ \To $\attrib{A}{length} - 1$
+    \Do
+\li       $y \gets A[j]$
+\li       \For $i \gets 1$ \To $j$
+          \Do
+\li             $y \gets y \cdot x$
+          \End
+\li       $\id{sum} \gets \id{sum} + y$
+    \End
+\end{codebox}
+
+This naive implementation has $T(n) = n (n - 1) (n - 2) ... (n - k) = n!$. So, the worst-case
+running time is $\Theta (n!)$. As we seem on \textbf{prob1-1} the $n!$ is pretty bad compared
+to the linear complexity of Horner's rule.
+
+\textbf{c.}
+
+\textbf{Answer}
+
+\textbf{d.}
+
+\textbf{Answer}
+
+\end{document}
