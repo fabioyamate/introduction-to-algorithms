@@ -1,0 +1,67 @@
+\documentclass[11pt]{article}          % use "amsart" instead of "article" for AMSLaTeX format
+\pagestyle{empty}
+\usepackage[margin=0.5in]{geometry}                           % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}
+%\geometry{landscape}                           % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}                   % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}                           % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+                                                                % TeX will automatically convert eps --> pdf in pdflatex                
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{clrscode3e}
+
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+\begin{document}
+%\section{}
+%\subsection{}
+
+\textbf{2-2 Correctness of bubblesort}
+
+\textbf{a.} In order to show that BUBBLESORT actually sorts, what else do we need to prove?
+
+\textbf{Answer}
+
+We need to prove that the initialization holds the invariant of BUBBLESORT.
+
+\textbf{b.} 
+
+\textbf{Answer}
+
+The loop invariant is always keep the larger value to the right.
+
+\textbf{Initialization} We start proving that the invariant holds before the first iteration
+with $j = n$. Since, the $A[n+1]$ does not exist, we may conclude that $A[n]$ is smaller than
+its next value.
+
+\textbf{Maintenance} For each iteration, we swaps the larger element to one position right,
+so we left with $A'[j-1] <= A'[j]$ holding the invariant of keeping the larger value to the
+right.
+
+\textbf{Termination} We end with $j = i + 1$, since we swaps the current element with the
+previous one, we always endup with the smallest element on $A[i]$.
+
+\textbf{c.} 
+
+\textbf{Answer}
+
+The loop invariant is always keep the smallest elements to left
+
+\textbf{Initialization} 
+
+\textbf{Maintenance} 
+
+\textbf{Termination} We finish with the subarray $A[i..n-1]$ elements sorted. Since the left
+subarray always holds the largest element, we don't need to sort the $A[n]$.
+
+\textbf{d. What is the worst-case running time of bubblesort? How does it compare to the running
+time of insertion sort?}
+
+\textbf{Answer}
+
+The $T(n) = (n - 1) + (n - 2) + ... + 1 = \frac{n(n - 1)}{2}$, so BUBBLESORT has $\Theta (n^2)$ the
+same as INSERTION-SORT.
+
+\end{document}
